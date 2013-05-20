@@ -1,4 +1,22 @@
 Snueng::Application.routes.draw do
+  get "admin/index"
+
+  get "photo/index"
+
+  get "photo/register"
+
+  get "photo/register_process"
+
+  get "photo/del"
+
+  get "photo/result"
+
+  get "user/login_process"
+
+  get "user/find_pw_send"
+
+  get "user/reset_pw"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

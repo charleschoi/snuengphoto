@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  email: MyString
+  password_hash: MyString
+  name: MyString
+  dept_id: 1
+  student_id: MyString
+  phone: MyString
+  find_pw_code: MyString
+
+two:
+  email: MyString
+  password_hash: MyString
+  name: MyString
+  dept_id: 1
+  student_id: MyString
+  phone: MyString
+  find_pw_code: MyString
