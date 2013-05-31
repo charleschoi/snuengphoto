@@ -1,17 +1,18 @@
 <center>
-  <h1>서울대학교 공과대학 사진전</h1>
-  <div style="width:600px;height:500px;background:yellow;">
+  <h1>서울대학교 공과대학 사진전</h1><br>
+  <div style="width:600px;height:500px;background:orange;">
   포스터 들어갈 자리
+  <img src="fly_photographers.jpg">
   </div>
-  <a href="#login" role="button" class="btn btn-primary" data-toggle="modal" style="margin:40px 0;">로그인 하기</a><br>
-  <a href="#join" role="button" class="btn btn-warning" data-toggle="modal">계정 만들기</a>
+  <a href="#login" role="button" class="btn btn-warning" data-toggle="modal" style="margin:40px 30px;">로그인 하기</a>
+  <a href="#join" role="button" class="btn btn-primary" data-toggle="modal">계정 만들기</a>
 </center>
 
 <!-- Login_modal -->
 <div id="login" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="Login">Login</h3>
+    <h3 id="Login">로그인하기</h3>
   </div>
   <div class="modal-body">
     <form action="/user/login_process" method="POST">
@@ -29,7 +30,7 @@
 <div id="join" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="join" aria-hidden="true">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="join">Login</h3>
+    <h3 id="join">계정 등록하기</h3>
   </div>
   <div class="modal-body">
     <form action="/user/join_process" method="POST">

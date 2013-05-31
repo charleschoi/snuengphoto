@@ -8,6 +8,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :student_id
       t.string :phone
       t.string :find_pw_code
+      t.boolean :activated
 
       t.timestamps
     end

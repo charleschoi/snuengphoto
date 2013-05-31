@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(:version => 20130520085902) do
     t.string   "student_id"
     t.string   "phone"
     t.string   "find_pw_code"
+    t.boolean  "activated"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end
