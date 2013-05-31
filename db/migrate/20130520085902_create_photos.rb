@@ -8,6 +8,7 @@ class CreatePhotos < ActiveRecord::Migration
       t.string :when
       t.string :description
       t.string :photo_saved_name
+      t.string :photo_thumb_name
       t.string :photo_real_name
 
       t.timestamps
