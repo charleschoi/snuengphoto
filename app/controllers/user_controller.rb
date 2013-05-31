@@ -7,4 +7,8 @@ class UserController < ApplicationController
 
   def reset_pw
   end
+
+  def join_process
+
+  end
 end

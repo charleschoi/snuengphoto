@@ -1,2 +1,24 @@
-<h1>Photo#index</h1>
-<p>Find me in app/views/photo/index.html.erb</p>
+<center>
+  <h1>서울대학교 공과대학 사진전</h1>
+  <div style="width:600px;height:500px;background:yellow;">
+  포스터 들어갈 자리
+  </div>
+  <input type="button" value="로그인 하기" style="height:50px;width:100px;margin:50px 0"><br>
+  <a href="#">참가 계정 만들기</a>
+</center>
+<div id="login_box">
+  <form action="/user/login_process" method="POST">
+    <input type="text" name="userid" placeholder="Email"><br>
+    <input type="password" name="password" placeholder="Password"><br>
+    <input type="submit" value="Login">
+  </form>
+</div>
+<div id="join_box">
+  <form action="/user/join_process" method="POST">
+    <input type="text" name="userid" placeholder="Eamil"><br>
+    <input type="password" name="password" placeholder="Password"><br>
+    <input type="password" name="password_confirm" placeholder="Password Confirm"><br>
+    <input type="submit" value="Join">
+  </form>
+</div>
+
