@@ -1,8 +1,10 @@
 <h1>사진 등록 하기</h1>
 <h2>참가자 정보</h2>
+<p>Email : <%= @user.email -%>@snu.ac.kr</p>
+<% if @user.photos.count < 3 -%>
 <h2>사진 등록</h2>
-<h4>최대 3개까지의 작품 등록이 가능합니다<h4>
 <form action="/photo/register_process" method="POST">
+  <input type="hidden" name="user_id" value="<%= @user.id -%>">
   제목 : <input type="text" name="title" ><br>
   장소 : <input type="text" name="where" ><br>
   시간 : <input type="text" name="when"><br>
@@ -10,5 +12,14 @@
   사진업로드 : <input type="file" name="photo"><br>
   <input type="submit" value="Save">
 </form>
-<h2>등록한 사진들<h2>
-
+<h4>최대 3개까지의 작품 등록이 가능합니다<h4>
+<% end -%>
+<h2>등록한 사진들</h2>
+<% @user.photos.each do |p| -%>
+<p>제목 : <%= p.title -%></p>
+<p>장소 : <%= p.where -%></p>
+<p>시간 : <%= p.when -%></p>
+<p>상세설명 : <%= p.description -%></p>
+<a href="/photo/del/<%= p.id -%>">Del</a>
+<hr>
+<% end %>
