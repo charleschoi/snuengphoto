@@ -3,22 +3,44 @@
   <div style="width:600px;height:500px;background:yellow;">
   포스터 들어갈 자리
   </div>
-  <input type="button" value="로그인 하기" style="height:50px;width:100px;margin:50px 0"><br>
-  <a href="#">참가 계정 만들기</a>
+  <a href="#login" role="button" class="btn btn-primary" data-toggle="modal" style="margin:40px 0;">로그인 하기</a><br>
+  <a href="#join" role="button" class="btn btn-warning" data-toggle="modal">계정 만들기</a>
 </center>
-<div id="login_box">
-  <form action="/user/login_process" method="POST">
-    <input type="text" name="userid" placeholder="Email"><br>
-    <input type="password" name="password" placeholder="Password"><br>
-    <input type="submit" value="Login">
-  </form>
+
+<!-- Login_modal -->
+<div id="login" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="Login">Login</h3>
+  </div>
+  <div class="modal-body">
+    <form action="/user/login_process" method="POST">
+      <input type="text" name="userid" placeholder="Eamil" style="margin-left:60px;"> @snu.ac.kr<br>
+      <input type="text" name="password" placeholder="Password" style="margin-left:60px;"><br>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+    <button class="btn btn-primary" type="submit">Login</button>
+    </form>
+  </div>
 </div>
-<div id="join_box">
-  <form action="/user/join_process" method="POST">
-    <input type="text" name="userid" placeholder="Eamil"><br>
-    <input type="password" name="password" placeholder="Password"><br>
-    <input type="password" name="password_confirm" placeholder="Password Confirm"><br>
-    <input type="submit" value="Join">
-  </form>
+
+<!-- Join_modal -->
+<div id="join" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="join" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="join">Login</h3>
+  </div>
+  <div class="modal-body">
+    <form action="/user/join_process" method="POST">
+      <input type="text" name="userid" placeholder="Eamil" style="margin-left:60px;"> @snu.ac.kr<br>
+      <input type="text" name="password" placeholder="Password" style="margin-left:60px;"><br>
+      <input type="text" name="password_confirm" placeholder="Password Confirm" style="margin-left:60px;"><br>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+    <button class="btn btn-primary" type="submit">Join</button>
+    </form>
+  </div>
 </div>
 
