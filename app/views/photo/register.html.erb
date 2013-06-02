@@ -1,6 +1,13 @@
 <h1>사진 등록 하기</h1>
 <h2>참가자 정보</h2>
 <p>Email : <%= @user.email -%>@snu.ac.kr</p>
+<p>Name : <%= @user.name -%></p>
+<p>Phone : <%= @user.phone -%></p>
+<p>학번 : <%= @user.student_id -%></p>
+<p>학과 : <%= @user.dept -%></p>
+<a href="/user/modify">정보 수정</a>
+
+
 <% if @user.photos.count < 3 -%>
 <h2>사진 등록</h2>
 <form action="/photo/register_process" method="POST">
