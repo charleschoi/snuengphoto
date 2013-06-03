@@ -7,9 +7,7 @@
 	<%u.photos.each do |p|-%>
 		<li class="span4" style="background-color:#fff;">
 			<div class="thumbnail">
-				<a href="/data/<%=p.photo_saved_name-%>" target="_blank">
-						<img src="/data/<%=p.photo_saved_name-%>">
-				</a>
+				<a href="/data/<%=p.photo_saved_name-%>" target="_blank">사진보기</a>
 				<p>제목 : <%= p.title -%></p>
 				<p>장소 : <%= p.where -%></p>
 				<p>시간 : <%= p.when -%></p>
