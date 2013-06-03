@@ -1,14 +1,18 @@
-<form action="/user/modify_process" method="POST">
-	이메일 : 
-	<%= @info.email -%>@snu.ac.kr<br>
-	이름 : 
+<hr>
+<div class="well">
+<center><h2>정보 수정하기</h2></center>
+<hr>
+<form action="/user/modify_process" method="POST" style="margin-left:30%;">
+	<label>이메일</label>
+	<strong><%= @info.email -%>@snu.ac.kr</strong><br>
+	<label for="name">이름</label> 
 	<input type="text" name="name" value="<%=@info.name-%>"><br>
-	연락처 : 
+	<label for="phone">연락처</label> 
 	<input type="text" name="phone" value="<%=@info.phone-%>"><br>
-	학번 : 
+	<label for="student_id">학번(학생만 입력)</label> 
 	<input type="text" name="student_id" value="<%=@info.student_id-%>"><br>
-	학과 : 
-	<select name="dpt_id" value="<@=info.dept_id-%>" style="margin-left:60px;">
+	<label for="dept_id">학과</label> 
+	<select name="dept_id" value="<@=info.dept_id-%>">
 		<option value="1">건설환경공학부</option>
 		<option value="2">기계항공공학부</option>
 		<option value="3">재료공학부</option>
@@ -22,5 +26,7 @@
 		<option value="11">조선해양공학과</option>
 		<option value="12">기타</option>
 	</select><br>
-	<button type="submit">수정</button>
+	<hr>
+	<button type="submit" class="btn btn-primary" style="margin-left:20%;">수정</button>
 </form>
+</div>

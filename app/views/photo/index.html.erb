@@ -1,6 +1,6 @@
 <center>
-  <a href="#login" role="button" class="btn btn-warning" data-toggle="modal" style="margin:40px 30px;">로그인 하기</a>
-  <a href="#join" role="button" class="btn btn-primary" data-toggle="modal">계정 만들기</a>
+  <a href="#login" role="button" class="btn btn-large btn-warning" data-toggle="modal" style="margin:40px 30px;">로그인 하기</a>
+  <a href="#join" role="button" class="btn btn-large btn-primary" data-toggle="modal">계정 만들기</a>
 </center>
 	<pre>
 [사진공모전 안내]
@@ -66,19 +66,13 @@
   </div>
   <div class="modal-body">
     <form action="/user/join_process" method="POST" style="margin-left:60px;">
-			<label for="userid">이메일</label>	
-      <input type="text" name="userid" placeholder="이메일"> @snu.ac.kr<br>
-			<label for="password">비밀번호</label>
-      <input type="password" name="password" placeholder="비밀번호"><br>
-			<label for="password_confirm">비밀번호 확인</label>
-      <input type="password" name="password_confirm" placeholder="비밀번호 재입력"><br>
+      이메일 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="userid" placeholder="이메일"> @snu.ac.kr<br>
+      비밀번호 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="password" name="password" placeholder="비밀번호"><br>
+      비밀번호확인 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="password" name="password_confirm" placeholder="비밀번호 재입력"><br>
 			<hr>
-			<label for="realname">이름</label>
-			<input type="text" id="realname" name="realname" placeholder="이름"><br>
-			<label for="phone">핸드폰 번호</label>
-			<input type="text" id="phone" name="phone" placeholder="핸드폰 번호"><br>
-			<label for="dept_id">학과</label>
-			<select name="dept_id">
+			이름 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="realname" name="realname" placeholder="이름"><br>
+			핸드폰번호 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="phone" name="phone" placeholder="핸드폰 번호"><br>
+			학과&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <select name="dept_id">
 				<option value="1">건설환경공학부</option>
 				<option value="2">기계항공공학부</option>
 				<option value="3">재료공학부</option>
@@ -92,8 +86,7 @@
 				<option value="11">조선해양공학과</option>
 				<option value="12">기타</option>
 			</select><br>
-			<label for="student_id">학번</label>
-			<input type="text" name="student_id" placeholder="학번"><br>
+			학번(학생만 입력) <input type="text" name="student_id" placeholder="학번"><br>
   </div>
   <div class="modal-footer">
     <button class="btn btn-primary" type="submit">등록하기</button>

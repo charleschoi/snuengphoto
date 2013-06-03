@@ -1,3 +1,4 @@
+#coding=utf-8
 class PhotoController < ApplicationController
   def index
     reset_session
@@ -14,21 +15,29 @@ class PhotoController < ApplicationController
 		if session[:user_id] == nil
 			redirect_to :root
 		else
-			photo = Photo.new
-			photo.user_id = User.find_by_email(session[:user_id]).id
-			photo.title = params[:title]
-			photo.where = params[:where]
-			photo.when = params[:when]
-			photo.description = params[:description]
-			photo.photo_saved_name = Time.now.to_i.to_s + "_" + rand(36**20).to_s(36) + File.extname(params[:photo].original_filename)
-			photo.photo_real_name = params[:photo].original_filename
-			File.open(Rails.root.join('public/data', photo.photo_saved_name), 'wb') do |file|
-				file.write(params[:photo].read)
-			end
-			if photo.save
-				redirect_to :action => "register" 
+			if params[:photo].nil?
+				render :text => "<script>alert('사진을 업로드 해주세요.');location.href = '/photo/register'; </script>"
 			else
-				render :text => "Error"
+				if params[:photo].content_type =~ /image|jpg|jpeg|png|gif|bmp/
+					photo = Photo.new
+					photo.user_id = User.find_by_email(session[:user_id]).id
+					photo.title = params[:title]
+					photo.where = params[:where]
+					photo.when = params[:when]
+					photo.description = params[:description]
+					photo.photo_saved_name = Time.now.to_i.to_s + "_" + rand(36**20).to_s(36) + File.extname(params[:photo].original_filename)
+					photo.photo_real_name = params[:photo].original_filename
+					File.open(Rails.root.join('public/data', photo.photo_saved_name), 'wb') do |file|
+						file.write(params[:photo].read)
+					end
+					if photo.save
+						redirect_to :action => "register" 
+					else
+						render :text => "Error"
+					end
+				else
+					render :text => "<script>alert('사진파일 형식이 잘못되었습니다.');location.href = '/photo/register'; </script>"
+				end
 			end
 		end
   end

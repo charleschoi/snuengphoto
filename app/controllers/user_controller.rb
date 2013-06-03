@@ -58,6 +58,7 @@ class UserController < ApplicationController
 		user.name = params[:name]
 		user.phone = params[:phone]
 		user.student_id = params[:student_id]
+		user.dept_id = params[:dept_id]
 		user.save
 		redirect_to "/photo/register"
 	end
