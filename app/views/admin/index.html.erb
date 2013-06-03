@@ -1,2 +1,22 @@
-<h1>Admin#index</h1>
-<p>Find me in app/views/admin/index.html.erb</p>
+<%@users.each do |u|-%>
+	<p>email : <%=u.email-%>@snu.ac.kr</p>
+	<p>name : <%=u.name-%></p>
+	<p>dept : <%=u.dept-%></p>
+	<p>phone : <%=u.phone-%></p>
+	<ul class="thumbnails">
+	<%u.photos.each do |p|-%>
+		<li class="span4" style="background-color:#fff;">
+			<div class="thumbnail">
+				<a href="/data/<%=p.photo_saved_name-%>" target="_blank">
+						<img src="/data/<%=p.photo_saved_name-%>">
+				</a>
+				<p>제목 : <%= p.title -%></p>
+				<p>장소 : <%= p.where -%></p>
+				<p>시간 : <%= p.when -%></p>
+				<p>상세설명 : <%= p.description -%></p>
+			</div>
+		</li>
+	<%end-%>
+	</ul>
+	<hr>
+<%end-%>
