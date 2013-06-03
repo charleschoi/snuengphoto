@@ -10,14 +10,14 @@
 
 <% if @user.photos.count < 3 -%>
 <h2>사진 등록</h2>
-<form action="/photo/register_process" method="POST">
-  <input type="hidden" name="user_id" value="<%= @user.id -%>">
-  제목 : <input type="text" name="title" ><br>
-  장소 : <input type="text" name="where" ><br>
-  시간 : <input type="text" name="when"><br>
-  상세설명 : <textarea name="description" rows="5"></textarea><br>
-  사진업로드 : <input type="file" name="photo"><br>
-  <input type="submit" value="Save">
+<%= form_tag({:action => :register_process}, :multipart => true) do %>
+  제목 : <%= text_field_tag 'title' %><br>
+  장소 : <%= text_field_tag 'where' %><br>
+  시간 : <%= text_field_tag 'when' %><br>
+	상세설명 : <textarea name="description" rows="5"></textarea><br>
+  사진업로드 : <%= file_field_tag 'photo' %><br>
+	<%= submit_tag 'Save' %>
+<% end %>
 </form>
 <h4>최대 3개까지의 작품 등록이 가능합니다<h4>
 <% end -%>
@@ -27,6 +27,10 @@
 <p>장소 : <%= p.where -%></p>
 <p>시간 : <%= p.when -%></p>
 <p>상세설명 : <%= p.description -%></p>
+<div style="width:300px;height:300px;overflow:hidden;">
+<a href="/data/<%=p.photo_saved_name-%>"><img src="/data/<%=p.photo_saved_name-%>" width="300"/></a>
+</div>
 <a href="/photo/del/<%= p.id -%>">Del</a>
 <hr>
 <% end %>
+<a href="/">참가 접수 완료</a>

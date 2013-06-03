@@ -1,12 +1,41 @@
 <center>
-  <h1>서울대학교 공과대학 사진전</h1><br>
-  <div style="width:600px;height:500px;background:orange;">
-  포스터 들어갈 자리
-  <img src="fly_photographers.jpg">
-  </div>
   <a href="#login" role="button" class="btn btn-warning" data-toggle="modal" style="margin:40px 30px;">로그인 하기</a>
   <a href="#join" role="button" class="btn btn-primary" data-toggle="modal">계정 만들기</a>
 </center>
+	<pre>
+[사진공모전 안내]
+
+ 서울대학교 공과대학 구성원들의 소속감 및 자긍심 고취를 위하여 학교를 사랑하는 마음과 즐거운 학교생활을 사진으로 담아 출품할 수 있는 기회를 마련하였으니, 학우 여러분의 많은 관심과 참여 부탁드립니다.
+
+◆ 출품자격
+· 서울대학교 공과대학 구성원(교수/학생/직원)
+
+◆ 공모내용
+· 서울대학교 풍경 (사계절 사진, 자신이 생각하는 명소)
+· 서울대인들의 생활 (동아리 활동 등) 
+
+◆ 접수기간
+2013년 6월 3일(월)~6월 28일(금), 4주간
+
+◆ 출품방법 
+· 공과대학 홈페이지 온라인 접수
+· 기본 인적사항(학과, 이름, 연락처), 작품명, 작품 속 장소 및 시기, 작품설명 기재(50자 이내)
+
+◆ 출품작수
+· 1인 3점 이하
+
+◆ 행사일정
+· 심사일정: 2013년 7월 1일(월) ~ 7월 31일(수)
+· 심사방법: 온라인 투표 + 심사위원단 투표
+· 결과발표: 2013년 8월중, 홈페이지 공지 및 개별 통보
+
+◆ 시상내역
+
+· 1등(1점) : 문화상품권 15만원
+· 2등(1점) : 문화상품권 10만원
+· 3등(1점) : 문화상품권 5만원
+· 입선(30점) : 문화상품권 2만원
+</pre>
 
 <!-- Login_modal -->
 <div id="login" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true">
@@ -16,9 +45,11 @@
   </div>
   <div class="modal-body">
     <!--<form action="/user/login_process" method="POST">-->
-    <form action="/user/login_process">
-      <input type="text" name="userid" placeholder="Eamil" style="margin-left:60px;"> @snu.ac.kr<br>
-      <input type="password" name="password" placeholder="Password" style="margin-left:60px;"><br>
+    <form action="/user/login_process" style="margin-left:60px;">
+			<label for="userid">아이디</label>
+      <input type="text" name="userid" placeholder="Eamil"> @snu.ac.kr<br>
+			<label for="password">비밀번호</label>
+      <input type="password" name="password" placeholder="Password"><br>
   </div>
   <div class="modal-footer">
     <button class="btn btn-primary" type="submit">Login</button>
@@ -34,14 +65,20 @@
     <h3 id="join">계정 등록하기</h3>
   </div>
   <div class="modal-body">
-    <form action="/user/join_process" method="POST">
-      <input type="text" name="userid" placeholder="이메일" style="margin-left:60px;"> @snu.ac.kr<br>
-      <input type="password" name="password" placeholder="비밀번호" style="margin-left:60px;"><br>
-      <input type="password" name="password_confirm" placeholder="비밀번호 재입력" style="margin-left:60px;"><br>
+    <form action="/user/join_process" method="POST" style="margin-left:60px;">
+			<label for="userid">이메일</label>	
+      <input type="text" name="userid" placeholder="이메일"> @snu.ac.kr<br>
+			<label for="password">비밀번호</label>
+      <input type="password" name="password" placeholder="비밀번호"><br>
+			<label for="password_confirm">비밀번호 확인</label>
+      <input type="password" name="password_confirm" placeholder="비밀번호 재입력"><br>
 			<hr>
-			<input type="text" name="realname" placeholder="이름" style="margin-left:60px;"><br>
-			<input type="text" name="phone" placeholder="핸드폰 번호" style="margin-left:60px;"><br>
-			<select name="dept_id" style="margin-left:60px;">
+			<label for="realname">이름</label>
+			<input type="text" id="realname" name="realname" placeholder="이름"><br>
+			<label for="phone">핸드폰 번호</label>
+			<input type="text" id="phone" name="phone" placeholder="핸드폰 번호"><br>
+			<label for="dept_id">학과</label>
+			<select name="dept_id">
 				<option value="1">건설환경공학부</option>
 				<option value="2">기계항공공학부</option>
 				<option value="3">재료공학부</option>
@@ -55,7 +92,8 @@
 				<option value="11">조선해양공학과</option>
 				<option value="12">기타</option>
 			</select><br>
-			<input type="text" name="student_id" placeholder="학번" style="margin-left:60px;"><br>
+			<label for="student_id">학번</label>
+			<input type="text" name="student_id" placeholder="학번"><br>
   </div>
   <div class="modal-footer">
     <button class="btn btn-primary" type="submit">등록하기</button>

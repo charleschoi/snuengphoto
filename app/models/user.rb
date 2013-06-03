@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
 		:message => "3이상 20자 이하입니다" }
 	validates :email, :presence => true
 	validates :email, :uniqueness => true
+	validates :password_hash, :presence => true
 
 	def dept
 		case dept_id

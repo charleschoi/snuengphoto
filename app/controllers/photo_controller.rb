@@ -11,24 +11,37 @@ class PhotoController < ApplicationController
   end
 
   def register_process
-    photo = Photo.new
-    photo.user_id = params[:user_id]
-    photo.title = params[:title]
-    photo.where = params[:where]
-    photo.when = params[:when]
-    photo.description = params[:description]
-    if photo.save
-      redirect_to :action => "register" 
-    else
-      render :text => "Error"
-    end
+		if session[:user_id] == nil
+			redirect_to :root
+		else
+			photo = Photo.new
+			photo.user_id = User.find_by_email(session[:user_id]).id
+			photo.title = params[:title]
+			photo.where = params[:where]
+			photo.when = params[:when]
+			photo.description = params[:description]
+			photo.photo_saved_name = Time.now.to_i.to_s + "_" + rand(36**20).to_s(36) + File.extname(params[:photo].original_filename)
+			photo.photo_real_name = params[:photo].original_filename
+			File.open(Rails.root.join('public/data', photo.photo_saved_name), 'wb') do |file|
+				file.write(params[:photo].read)
+			end
+			if photo.save
+				redirect_to :action => "register" 
+			else
+				render :text => "Error"
+			end
+		end
   end
 
   def del
-    del_to_photo = Photo.find(params[:id])
-    del_to_photo.destroy
-    redirect_to :action => "register"
-  end
+	  if User.find_by_email(session[:user_id]).id == Photo.find(params[:id]).user_id
+			del_to_photo = Photo.find(params[:id])
+			del_to_photo.destroy
+			redirect_to :action => "register"
+		else
+			render :text => "Wrong!!"
+		end
+	end
 
   def result
   end
