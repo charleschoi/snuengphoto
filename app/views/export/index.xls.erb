@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="Sheet1">
+    <Table>
+      <Row>
+        <Cell><Data ss:Type="String">번호</Data></Cell>
+        <Cell><Data ss:Type="String">이름</Data></Cell>
+        <Cell><Data ss:Type="String">학과</Data></Cell>
+        <Cell><Data ss:Type="String">학번</Data></Cell>
+        <Cell><Data ss:Type="String">이메일</Data></Cell>
+        <Cell><Data ss:Type="String">전화번호</Data></Cell>
+        <Cell><Data ss:Type="String">제목</Data></Cell>
+        <Cell><Data ss:Type="String">장소</Data></Cell>
+        <Cell><Data ss:Type="String">시기</Data></Cell>
+        <Cell><Data ss:Type="String">상세설명</Data></Cell>
+      </Row>
+    <% @products.each do |product| %>
+      <Row>
+        <Cell><Data ss:Type="Number"><%= product.id %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= product.user.name %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= product.user.dept %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= product.user.student_id %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= product.user.email %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= product.user.phone %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= product.title %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= product.where %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= product.when %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= product.description %></Data></Cell>
+      </Row>
+    <% end %>
+    </Table>
+  </Worksheet>
+</Workbook>

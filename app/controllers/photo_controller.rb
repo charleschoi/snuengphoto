@@ -1,5 +1,6 @@
 #coding=utf-8
 class PhotoController < ApplicationController
+	http_basic_authenticate_with name: "charles", password: "1342", except: :index
   def index
     reset_session
   end

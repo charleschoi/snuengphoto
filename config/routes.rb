@@ -1,4 +1,8 @@
 Snueng::Application.routes.draw do
+  get "export/index"
+
+	get "export/download"
+
   get "admin/index"
 
   get "photo/index"
